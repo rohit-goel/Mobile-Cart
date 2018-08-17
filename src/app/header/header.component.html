@@ -3,16 +3,11 @@
     
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
 
-    <a href="#" (click)="display('Electronics')">Laptops</a>
-    <a href="#" (click)="display('Lifestyle')">Lifestyle</a>
-    <a href="#" (click)="display('MusicalInstruments')">Musical Instruments</a>
-    <a href="#" (click)="display('Sports')">Sports</a>
-    <a href="#" (click)="display('Furniture')">Furniture</a>    
-    <a href="#" (click)="display('Fruits')">Fruits</a>
-    <a href="#" (click)="display('Vegetables')">Vegetables</a>
-    <a href="#" (click)="display('MobilesAcessories')">Mobiles Acessories</a>
-    <a href="#" (click)="display('LaptopsAcessories')">Laptops Acessories</a>
-    <a href="#" (click)="display('Tablets')">Tablets</a>
+    <a href="#" (click)="showlaptops()">Laptops</a>
+    <a href="#" (click)="showfruits()">Fruits</a>
+    <a href="#" (click)="showvegetables()">Vegetables</a>
+    <a href="#" (click)="showpulses()">Pulses</a>
+    <a href="#" (click)="getAll()">All</a>
 
     <hr>
     <a href="#">About Us</a>
@@ -21,3 +16,21 @@
   MobileCart
   <input type="search" class="search" placeholder="Search for products">
 </header>
+<table>
+  <thead>
+      <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let element of allData">   
+          <td>{{element.name}}</td> 
+          <td>{{element.price}}</td>
+      </tr>
+  </tbody>
+  <tfoot>
+      <td>Total</td>
+      <td></td>
+  </tfoot>
+</table>
